@@ -39,16 +39,16 @@ fn main() {
     log(format!("args: {:#?}", args).as_str(), None);
     log("starting writhe", Some(PrintColors::Green));
 
+    //try this let (file, bytes) = match ...; line before the File::create line, and then it would be File::create(file).unwrap().write_all(bytes).unwrap()
     match Ok("hi") {
         Ok(res) => File::create(format!("writhe/{}", args[1].replace("rs", "py")))
             .unwrap()
-            .write_all(format!("{}\n", res).as_bytes())
-            .unwrap(),
+            .write_all(format!("{}\n", res).as_bytes()),
         Err(res) => File::create("writhe/logs/attempt_log.py")
             .unwrap()
-            .write_all(res.as_bytes())
-            .unwrap(),
+            .write_all(res.as_bytes()),
     }
+    .unwrap();
 }
 
 enum PrintColors {
