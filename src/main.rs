@@ -39,13 +39,12 @@ fn main() {
     log(format!("args: {:#?}", args).as_str(), None);
     log("starting writhe", Some(PrintColors::Green));
 
-    let teething: Result<&str, &str> = Ok("hi");
-    match teething {
+    match Ok("hi") {
         Ok(res) => File::create(format!("writhe/{}", args[1].replace("rs", "py")))
             .unwrap()
             .write_all(format!("{}\n", res).as_bytes())
             .unwrap(),
-        Err(res) => File::create(format!("writhe/logs/attempt_log.txt"))
+        Err(res) => File::create("writhe/logs/attempt_log.py")
             .unwrap()
             .write_all(res.as_bytes())
             .unwrap(),
