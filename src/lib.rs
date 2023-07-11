@@ -32,9 +32,7 @@ pub fn log(msg: &str, pri: Option<PrintColors>) {
         .unwrap();
     let mut contents: String = String::new();
     runtime_logs.read_to_string(&mut contents).unwrap();
-    runtime_logs
-        .write_all(format!("{}", fm).as_bytes())
-        .unwrap();
+    runtime_logs.write_all(fm.as_bytes()).unwrap();
 
     if let Some(color) = pri {
         match color {
