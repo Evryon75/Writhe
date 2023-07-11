@@ -1,5 +1,20 @@
-[2023-07-10 22:11:59.525622300 +02:00] >> args: [
+[2023-07-11 22:33:16.9664] >> writhe starting
+[2023-07-11 22:33:16.9669] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-10 22:11:59.525711600 +02:00] >> starting writhe
+[2023-07-11 22:33:23.0390] >> writhe starting
+[2023-07-11 22:33:23.0394] >> args: [
+    "target\\debug\\writhe.exe",
+    "hello.rs",
+]
+[2023-07-11 22:33:27.4973] >> writhe starting
+[2023-07-11 22:33:27.4977] >> args: [
+    "target\\debug\\writhe.exe",
+    "hello.rs",
+]
+[2023-07-11 22:33:33.8533] >> writhe starting
+[2023-07-11 22:33:33.8539] >> args: [
+    "target\\debug\\writhe.exe",
+    "hello.rs",
+]
