@@ -1,34 +1,18 @@
 use colour::*;
+use writhe::Token;
 
 pub fn lex(input: Vec<String>) {
-    magenta_ln!("{:#?}", input);
+    let mut tokens: Vec<Token> = vec![];
+    for w in input {
+        println!("{}", w);
+        if let Some(token) = tokenize(w) {
+            tokens.push(token);
+        }
+    }
 }
 
-fn tokenize(word: String) {
-
+fn tokenize(word: String) -> Option<Token> {
+    None
 }
 
-fn advanced(seq: String) {
-
-}
-
-enum Token {
-    Identifier(String),
-    Fn,
-    Let,
-    Use,
-    Mut,
-    For,
-    In,
-    Match,
-    As,
-    Enum,
-    Colon,
-    Semicolon,
-    RoundLeft,
-    RoundRight,
-    SquareLeft,
-    SquareRight,
-    CurlyLeft,
-    CurlyRight,
-}
+fn thorough_tokenize(seq: String) {}

@@ -44,3 +44,30 @@ pub fn log(msg: &str, pri: Option<PrintColors>) {
         }
     }
 }
+
+pub enum Token {
+    Identifier(String), // Remember to limit this to 79 chars
+    StringLiteral(String),
+    BooleanLiteral(bool),
+    NumericLiteral(usize),
+    Fn,
+    Let,
+    Use,
+    Mut,
+    For,
+    In,
+    Match,
+    As,
+    Enum,
+    Colon,
+    Semicolon,
+    RoundLeft,
+    RoundRight,
+    SquareLeft,
+    SquareRight,
+    CurlyLeft,
+    CurlyRight,
+    Equals,
+    Greater,
+    Lesser,
+}

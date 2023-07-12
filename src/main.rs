@@ -23,9 +23,19 @@ fn main() {
         "LEX FN PRINT:{:#?}",
         lex({
             let mut collection: Vec<String> = vec![];
-            contents.replace("\r\n", " ").split(" ").for_each(|e| {
-                collection.push(e.to_owned());
-            });
+            contents
+                .replace("\r\n", " ")
+                .replace("(", " ( ")
+                .replace(")", " ) ")
+                .replace("[", " [ ")
+                .replace("[", " ] ")
+                .replace("{", " { ")
+                .replace("}", " } ")
+                .replace("!", " ")
+                .split(" ")
+                .for_each(|e| {
+                    collection.push(e.to_owned());
+                });
             collection
         })
     );
