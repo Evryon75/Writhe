@@ -45,7 +45,12 @@ pub fn log(msg: &str, pri: Option<PrintColors>) {
     }
 }
 
+#[derive(Debug, PartialEq, Clone)]
 pub enum Token {
+    Trait,
+    Impl,
+    Struct,
+    Undefined,
     Identifier(String), // Remember to limit this to 79 chars
     StringLiteral(String),
     BooleanLiteral(bool),
@@ -68,6 +73,9 @@ pub enum Token {
     CurlyLeft,
     CurlyRight,
     Equals,
+    DoubleEquals,
     Greater,
     Lesser,
+    And,
+    Or,
 }

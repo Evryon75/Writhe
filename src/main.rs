@@ -19,26 +19,7 @@ fn main() {
         .unwrap()
         .read_to_string(&mut contents)
         .unwrap();
-    println!(
-        "LEX FN PRINT:{:#?}",
-        lex({
-            let mut collection: Vec<String> = vec![];
-            contents
-                .replace("\r\n", " ")
-                .replace("(", " ( ")
-                .replace(")", " ) ")
-                .replace("[", " [ ")
-                .replace("[", " ] ")
-                .replace("{", " { ")
-                .replace("}", " } ")
-                .replace("!", " ")
-                .split(" ")
-                .for_each(|e| {
-                    collection.push(e.to_owned());
-                });
-            collection
-        })
-    );
+    println!("LEX FN PRINT:{:#?}", lex(contents));
 
     //try this let (file, bytes) = match ...; line before the File::create line, and then it would be File::create(file).unwrap().write_all(bytes).unwrap()
     match Ok("hi") as Result<&str, &str> {
