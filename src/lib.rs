@@ -13,11 +13,20 @@ pub enum PrintColors {
 }
 pub fn init() {
     if let Ok(_) = std::fs::create_dir("writhe") {
+        let default_config = "{
+  \"files\": [
+    \"files_go_here.rs\",
+  ]
+}";
         std::fs::create_dir("writhe/src").unwrap();
         std::fs::create_dir("writhe/logs").unwrap();
         std::fs::create_dir("writhe/lib").unwrap();
         File::create("writhe/logs/runtime_log.txt").unwrap();
         File::create("writhe/logs/attempt_log.py").unwrap();
+        File::create("writhe/writhe_config.json")
+            .unwrap()
+            .write_all(format!("{:#}", default_config).as_bytes())
+            .unwrap();
         log("[NOTE] writhe directory created", Some(Green));
     }
     log("[NOTE] writhe starting", Some(Green));

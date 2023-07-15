@@ -1,9 +1,9 @@
 mod lexer;
 
 use crate::lexer::lex;
+use std::env;
 use std::fs::File;
 use std::io::{Read, Write};
-use std::env;
 use writhe::{init, log};
 
 fn main() {
@@ -11,7 +11,8 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     //todo: add flags for:
     // show tokens
-    // custom path so add a config json
+    // multiple files in the json like make a vector or something idk
+    // config json
 
     log(format!("[NOTE] args: {:#?}", args).as_str(), None);
     let mut contents = String::new();
@@ -30,5 +31,5 @@ fn main() {
             .unwrap()
             .write_all(res.as_bytes()),
     }
-        .unwrap();
+    .unwrap();
 }
