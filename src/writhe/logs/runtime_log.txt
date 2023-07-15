@@ -1,0 +1,31 @@
+[2023-07-15 21:13:47.1252] >> [NOTE] writhe directory created
+[2023-07-15 21:13:47.1255] >> [NOTE] writhe starting
+[2023-07-15 21:13:47.1258] >> [NOTE] args: [
+    "writhe",
+    "hello.rs",
+]
+[2023-07-15 21:14:09.6982] >> [NOTE] writhe starting
+[2023-07-15 21:14:09.6986] >> [NOTE] args: [
+    "writhe",
+    "hello.rs",
+]
+[2023-07-15 21:14:10.9989] >> [NOTE] writhe starting
+[2023-07-15 21:14:10.9993] >> [NOTE] args: [
+    "writhe",
+    "hello.rs",
+]
+[2023-07-15 21:14:12.1548] >> [NOTE] writhe starting
+[2023-07-15 21:14:12.1551] >> [NOTE] args: [
+    "writhe",
+    "hello.rs",
+]
+[2023-07-15 21:14:15.9546] >> [NOTE] writhe starting
+[2023-07-15 21:14:15.9551] >> [NOTE] args: [
+    "writhe",
+    "hello.rs",
+]
+[2023-07-15 21:14:16.8012] >> [NOTE] writhe starting
+[2023-07-15 21:14:16.8015] >> [NOTE] args: [
+    "writhe",
+    "hello.rs",
+]

@@ -1,28 +1,6 @@
-[2023-07-15 17:06:12.5738] >> [NOTE] writhe directory created
-[2023-07-15 17:06:12.5743] >> [NOTE] writhe starting
-[2023-07-15 17:06:12.5746] >> [NOTE] args: [
-    "target\\debug\\writhe.exe",
-    "hello.rs",
-]
-[2023-07-15 17:06:12.5750] >> [LEXER ERROR] Numeric literals must not contain more than one dot [.]
-At line 8: 2_981_342_344_2.34. !
-[2023-07-15 17:07:16.9622] >> [NOTE] writhe starting
-[2023-07-15 17:07:16.9625] >> [NOTE] args: [
-    "target\\debug\\writhe.exe",
-    "hello.rs",
-]
-[2023-07-15 17:07:43.9462] >> [NOTE] writhe starting
-[2023-07-15 17:07:43.9465] >> [NOTE] args: [
-    "target\\debug\\writhe.exe",
-    "hello.rs",
-]
-[2023-07-15 17:08:19.0229] >> [NOTE] writhe starting
-[2023-07-15 17:08:19.0236] >> [NOTE] args: [
-    "target\\debug\\writhe.exe",
-    "hello.rs",
-]
-[2023-07-15 17:08:38.4799] >> [NOTE] writhe starting
-[2023-07-15 17:08:38.4802] >> [NOTE] args: [
+[2023-07-15 21:07:48.5213] >> [NOTE] writhe directory created
+[2023-07-15 21:07:48.5216] >> [NOTE] writhe starting
+[2023-07-15 21:07:48.5219] >> [NOTE] args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]

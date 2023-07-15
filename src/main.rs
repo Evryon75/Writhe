@@ -1,5 +1,3 @@
-#![feature(let_chains)]
-
 mod lexer;
 
 use crate::lexer::lex;
@@ -32,5 +30,5 @@ fn main() {
             .unwrap()
             .write_all(res.as_bytes()),
     }
-    .unwrap();
+        .unwrap();
 }
