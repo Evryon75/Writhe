@@ -1,185 +1,176 @@
-[2023-07-13 23:07:15.7813] >> writhe starting
-[2023-07-13 23:07:15.7820] >> args: [
+[2023-07-15 12:53:07.6363] >> writhe directory created
+[2023-07-15 12:53:07.6368] >> writhe starting
+[2023-07-15 12:53:07.6370] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:07:42.6655] >> writhe starting
-[2023-07-13 23:07:42.6658] >> args: [
+[2023-07-15 12:58:45.4398] >> writhe starting
+[2023-07-15 12:58:45.4403] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:07:50.3056] >> writhe starting
-[2023-07-13 23:07:50.3060] >> args: [
+[2023-07-15 13:02:04.9068] >> writhe starting
+[2023-07-15 13:02:04.9074] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:08:11.6208] >> writhe starting
-[2023-07-13 23:08:11.6214] >> args: [
+[2023-07-15 13:03:43.0037] >> writhe starting
+[2023-07-15 13:03:43.0043] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:13:48.6251] >> writhe starting
-[2023-07-13 23:13:48.6258] >> args: [
+[2023-07-15 13:05:08.6330] >> writhe starting
+[2023-07-15 13:05:08.6337] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:14:15.5740] >> writhe starting
-[2023-07-13 23:14:15.5746] >> args: [
+[2023-07-15 13:05:51.0686] >> writhe starting
+[2023-07-15 13:05:51.0692] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:16:47.6521] >> writhe starting
-[2023-07-13 23:16:47.6526] >> args: [
+[2023-07-15 13:05:55.0817] >> writhe starting
+[2023-07-15 13:05:55.0822] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:17:12.4214] >> writhe starting
-[2023-07-13 23:17:12.4220] >> args: [
+[2023-07-15 13:05:58.9020] >> writhe starting
+[2023-07-15 13:05:58.9023] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:17:32.9103] >> writhe starting
-[2023-07-13 23:17:32.9108] >> args: [
+[2023-07-15 13:06:02.0417] >> writhe starting
+[2023-07-15 13:06:02.0420] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:19:50.2947] >> writhe starting
-[2023-07-13 23:19:50.2953] >> args: [
+[2023-07-15 13:06:13.5385] >> writhe starting
+[2023-07-15 13:06:13.5391] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:19:59.3189] >> writhe starting
-[2023-07-13 23:19:59.3195] >> args: [
+[2023-07-15 13:07:26.3086] >> writhe starting
+[2023-07-15 13:07:26.3092] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:20:13.6584] >> writhe starting
-[2023-07-13 23:20:13.6590] >> args: [
+[2023-07-15 13:07:42.1083] >> writhe starting
+[2023-07-15 13:07:42.1090] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:20:32.2199] >> writhe starting
-[2023-07-13 23:20:32.2204] >> args: [
+[2023-07-15 13:08:02.6277] >> writhe starting
+[2023-07-15 13:08:02.6283] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:20:45.9972] >> writhe starting
-[2023-07-13 23:20:45.9977] >> args: [
+[2023-07-15 13:08:59.3415] >> writhe starting
+[2023-07-15 13:08:59.3421] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:20:59.6036] >> writhe starting
-[2023-07-13 23:20:59.6042] >> args: [
+[2023-07-15 13:10:38.9849] >> writhe starting
+[2023-07-15 13:10:38.9856] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:21:23.3263] >> writhe starting
-[2023-07-13 23:21:23.3268] >> args: [
+[2023-07-15 13:10:48.2128] >> writhe starting
+[2023-07-15 13:10:48.2134] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:21:45.3982] >> writhe starting
-[2023-07-13 23:21:45.3988] >> args: [
+[2023-07-15 13:11:03.1817] >> writhe starting
+[2023-07-15 13:11:03.1823] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:21:51.8916] >> writhe starting
-[2023-07-13 23:21:51.8922] >> args: [
+[2023-07-15 13:11:08.0084] >> writhe starting
+[2023-07-15 13:11:08.0090] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:22:36.3472] >> writhe starting
-[2023-07-13 23:22:36.3478] >> args: [
+[2023-07-15 13:18:55.7162] >> writhe starting
+[2023-07-15 13:18:55.7168] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:32:06.0278] >> writhe starting
-[2023-07-13 23:32:06.0284] >> args: [
+[2023-07-15 13:32:55.2379] >> writhe starting
+[2023-07-15 13:32:55.2384] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:32:44.5583] >> writhe starting
-[2023-07-13 23:32:44.5590] >> args: [
+[2023-07-15 13:44:10.5864] >> writhe starting
+[2023-07-15 13:44:10.5869] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:33:17.8351] >> writhe starting
-[2023-07-13 23:33:17.8356] >> args: [
+[2023-07-15 13:45:19.2655] >> writhe starting
+[2023-07-15 13:45:19.2661] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:33:58.7031] >> writhe starting
-[2023-07-13 23:33:58.7037] >> args: [
+[2023-07-15 13:46:24.0094] >> writhe starting
+[2023-07-15 13:46:24.0100] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:35:25.7896] >> writhe starting
-[2023-07-13 23:35:25.7902] >> args: [
+[2023-07-15 13:46:37.0552] >> writhe starting
+[2023-07-15 13:46:37.0557] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:35:51.4983] >> writhe starting
-[2023-07-13 23:35:51.4989] >> args: [
+[2023-07-15 13:47:28.2239] >> writhe starting
+[2023-07-15 13:47:28.2244] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:37:08.5553] >> writhe starting
-[2023-07-13 23:37:08.5559] >> args: [
+[2023-07-15 13:48:36.3128] >> writhe starting
+[2023-07-15 13:48:36.3133] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:37:59.0911] >> writhe starting
-[2023-07-13 23:37:59.0917] >> args: [
+[2023-07-15 13:49:27.6270] >> writhe starting
+[2023-07-15 13:49:27.6275] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:39:52.0502] >> writhe starting
-[2023-07-13 23:39:52.0508] >> args: [
+[2023-07-15 13:50:04.7828] >> writhe starting
+[2023-07-15 13:50:04.7833] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:40:33.0746] >> writhe starting
-[2023-07-13 23:40:33.0752] >> args: [
+[2023-07-15 13:53:07.8829] >> writhe starting
+[2023-07-15 13:53:07.8835] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:41:32.7241] >> writhe starting
-[2023-07-13 23:41:32.7247] >> args: [
+[2023-07-15 13:53:35.0806] >> writhe starting
+[2023-07-15 13:53:35.0813] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:45:36.4602] >> writhe starting
-[2023-07-13 23:45:36.4608] >> args: [
+[2023-07-15 13:54:52.9516] >> writhe starting
+[2023-07-15 13:54:52.9523] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:46:39.5830] >> writhe starting
-[2023-07-13 23:46:39.5835] >> args: [
+[2023-07-15 13:55:11.1989] >> writhe starting
+[2023-07-15 13:55:11.1995] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:48:11.4709] >> writhe starting
-[2023-07-13 23:48:11.4713] >> args: [
+[2023-07-15 14:03:48.2552] >> writhe starting
+[2023-07-15 14:03:48.2557] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:48:31.7206] >> writhe starting
-[2023-07-13 23:48:31.7212] >> args: [
+[2023-07-15 14:11:11.8881] >> writhe starting
+[2023-07-15 14:11:11.8886] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]
-[2023-07-13 23:48:42.9593] >> writhe starting
-[2023-07-13 23:48:42.9599] >> args: [
-    "target\\debug\\writhe.exe",
-    "hello.rs",
-]
-[2023-07-13 23:53:05.1201] >> writhe starting
-[2023-07-13 23:53:05.1207] >> args: [
-    "target\\debug\\writhe.exe",
-    "hello.rs",
-]
-[2023-07-13 23:53:21.0322] >> writhe starting
-[2023-07-13 23:53:21.0326] >> args: [
+[2023-07-15 14:12:51.5743] >> writhe starting
+[2023-07-15 14:12:51.5748] >> args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]

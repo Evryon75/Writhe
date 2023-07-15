@@ -1,6 +1,5 @@
 fn main() {
+    use crazy::std;
     // im balling bro
-    println!("asd /* asdas */ asd ::: asd:" /* this hsouldnt be read */);
-    println!("asd /* baybeeee:" /* this hsouldnt be read */);
-    println!('a' /* this hsouldnt be read */);
+    println!("{}", 9_812_233.123 /* in fact this is inviisible*/ );
 }

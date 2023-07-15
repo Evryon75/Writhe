@@ -12,7 +12,9 @@ pub enum PrintColors {
 }
 pub fn init() {
     if let Ok(_) = std::fs::create_dir("writhe") {
+        std::fs::create_dir("writhe/src").unwrap();
         std::fs::create_dir("writhe/logs").unwrap();
+        std::fs::create_dir("writhe/lib").unwrap();
         File::create("writhe/logs/runtime_log.txt").unwrap();
         File::create("writhe/logs/attempt_log.py").unwrap();
         log("writhe directory created", Some(Green));
@@ -47,6 +49,11 @@ pub fn log(msg: &str, pri: Option<PrintColors>) {
 
 #[derive(Debug, PartialEq, Clone)]
 pub enum Token {
+    Divide,
+    Multiply,
+    Subtract,
+    Add,
+    Comma,
     Trait,
     Impl,
     Struct,
