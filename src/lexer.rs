@@ -1,115 +1,141 @@
 use colour::*;
-use writhe::Token;
+use writhe::{panic_confirm, Token};
 
-pub fn lex(input_raw: String) {
+const IDENT_CHARS: &str = "_qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+const IDENT_DIGITS: &str = "1234567890";
+const DIGITS: &str = "1234567890._";
+
+enum LexerState {
+    Number,
+    String,
+    Comment,
+    Ident,
+    Free,
+}
+
+pub fn lex(input_raw: String) -> Vec<Token> {
     let mut tokens: Vec<Token> = vec![];
     let mut state = LexerState::Free;
-    let mut prev_state = LexerState::Free;
-    for line in input_raw.lines().filter(|s| !s.trim().starts_with("//")) {
-        let chars: Vec<char> = line.chars().collect();
+    let mut line_count = 0;
+    for line in input_raw.lines() {
+        line_count += 1;
+        if !line.trim().starts_with("//") {
+            let chars: Vec<char> = line.chars().collect();
+            let mut build = String::new();
+            let mut dot = false;
 
-        const IDENT_CHARS: &str = "_qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
-        const IDENT_DIGITS: &str = "1234567890";
-        const DIGITS: &str = "1234567890._";
+            let mut i = 0;
+            while i < chars.len() {
+                let char = chars[i];
 
-        let mut build = String::new();
-        let mut i = 0;
-        while i < chars.len() {
-            let char = chars[i];
-
-            if let Some(tok) = match state {
-                LexerState::Number => {
-                    let result = None;
-
-                    if !DIGITS.contains(chars[i + 1]) {
-                        state = LexerState::Free;
-                        prev_state = LexerState::Number;
+                if let Some(tok) = match state {
+                    LexerState::Number => {
+                        if !DIGITS.contains(chars[i]) {
+                            state = LexerState::Free;
+                            dot = false;
+                            i -= 1;
+                            Some(Token::NumericLiteral(
+                                build.replace("_", "").parse::<f64>().unwrap(),
+                            ))
+                        } else {
+                            build.push(char);
+                            if chars[i] == '.' {
+                                if dot {
+                                    panic_confirm(format!("[LEXER ERROR] Numeric literals must not contain more than one dot [.]\nAt line {}: {} !", line_count, build).as_str())
+                                } else {
+                                    dot = true;
+                                }
+                            }
+                            None
+                        }
                     }
+                    LexerState::String => {
+                        if chars[i] == '\"' {
+                            state = LexerState::Free;
+                            Some(Token::StringLiteral(build.to_string()))
+                        } else {
+                            build.push(char);
+                            None
+                        }
+                    }
+                    LexerState::Comment => {
+                        if chars[i] == '/' && chars[i - 1] == '*' {
+                            state = LexerState::Free;
+                        }
+                        None
+                    }
+                    LexerState::Ident => {
+                        if !IDENT_CHARS.contains(chars[i]) && !IDENT_DIGITS.contains(chars[i]) {
+                            state = LexerState::Free;
 
-                    result
+                            i -= 1;
+
+                            tokenize(&build.to_string())
+                        } else {
+                            build.push(char);
+                            None
+                        }
+                    }
+                    LexerState::Free => {
+                        let mut result: Option<Token> = None;
+
+                        build.clear();
+
+                        if chars[i] == '/' && chars[i + 1] == '*' {
+                            state = LexerState::Comment;
+                        } else if chars[i] == '\"' {
+                            state = LexerState::String;
+                        } else if IDENT_CHARS.contains(char) {
+                            state = LexerState::Ident;
+                            build.push(char);
+                        } else if IDENT_DIGITS.contains(chars[i]) {
+                            state = LexerState::Number;
+                            build.push(char);
+                        } else {
+                            result = tokenize(char.to_string().as_str());
+                        };
+                        if i != chars.len() - 1 {
+                            //todo: try to use a match with fmt for this
+                            result = if chars[i] == '&' && chars[i + 1] == '&' {
+                                i += 1;
+                                Some(Token::Operator(String::from("&&")))
+                            } else if chars[i] == '|' && chars[i + 1] == '|' {
+                                i += 1;
+                                Some(Token::Operator(String::from("||")))
+                            } else if chars[i] == '<' && chars[i + 1] == '=' {
+                                i += 1;
+                                Some(Token::Operator(String::from("<=")))
+                            } else if chars[i] == '>' && chars[i + 1] == '=' {
+                                i += 1;
+                                Some(Token::Operator(String::from(">=")))
+                            } else if chars[i] == '=' && chars[i + 1] == '=' {
+                                i += 1;
+                                Some(Token::Operator(String::from("==")))
+                            } else if chars[i] == ':' && chars[i + 1] == ':' {
+                                i += 1;
+                                Some(Token::DoubleColon)
+                            } else {
+                                result
+                            };
+                        }
+                        result
+                    }
+                } {
+                    tokens.push(tok);
                 }
-                LexerState::String => {
-                    let result = None;
-
-                    if chars[i] == '\"' {
-                        state = LexerState::Free;
-                        prev_state = LexerState::String;
-                    }
-
-                    result
-                }
-                LexerState::Comment => {
-                    if chars[i] == '/' && chars[i - 1] == '*' {
-                        state = LexerState::Free;
-                        prev_state = LexerState::Comment;
-                    }
-                    None
-                }
-                LexerState::Ident => {
-                    let result = None;
-
-                    if !IDENT_CHARS.contains(chars[i + 1]) && !IDENT_DIGITS.contains(chars[i + 1]) {
-                        state = LexerState::Free;
-                        prev_state = LexerState::Ident;
-                    }
-
-                    build.push(char);
-
-                    result
-                }
-                LexerState::Free => {
-                    let mut result: Option<Token> = None;
-
-                    if !build.is_empty() {
-                        result = Some(match prev_state {
-                            LexerState::Number => Token::NumericLiteral(build.parse::<usize>().unwrap()),
-                            LexerState::String => Token::StringLiteral(build.to_string()),
-                            LexerState::Ident => Token::Identifier(build.to_string()),
-                            LexerState::Comment => unreachable!(),
-                            LexerState::Free => unreachable!()
-                        })
-                    }
-
-                    if chars[i] == '/' && chars[i + 1] == '*' {
-                        state = LexerState::Comment;
-                        prev_state = LexerState::Free;
-                    } else if chars[i] == '\"' {
-                        state = LexerState::String;
-                        prev_state = LexerState::Free;
-                    } else if IDENT_CHARS.contains(char) {
-                        state = LexerState::Ident;
-                        prev_state = LexerState::Free;
-
-                        build.push(char);
-                    } else if IDENT_DIGITS.contains(chars[i]) {
-                        state = LexerState::Number;
-                        prev_state = LexerState::Free;
-                        build.push(char);
-                    } else {
-                        result = tokenize(char.to_string().as_str());
-                    }
-                    result
-                }
-            } {
-                tokens.push(tok);
+                i += 1;
             }
-
-            white_ln!("{}, {:?}", char, state);
-            build.clear();
-            i += 1;
         }
     }
-
-    magenta_ln!("{:#?}", tokens);
+    tokens
 }
 
 fn tokenize(word: &str) -> Option<Token> {
-    green_ln!("{:#?}", word);
     match word {
-        "+" => Some(Token::Add),
-        "-" => Some(Token::Subtract),
-        "*" => Some(Token::Multiply),
-        "/" => Some(Token::Divide),
+        "+" => Some(Token::Operator(String::from("+"))),
+        "-" => Some(Token::Operator(String::from("-"))),
+        "*" => Some(Token::Operator(String::from("*"))),
+        "/" => Some(Token::Operator(String::from("/"))),
         "," => Some(Token::Comma),
         "trait" => Some(Token::Trait),
         "struct" => Some(Token::Struct),
@@ -138,23 +164,14 @@ fn tokenize(word: &str) -> Option<Token> {
         "{" => Some(Token::CurlyLeft),
         "}" => Some(Token::CurlyRight),
         "=" => Some(Token::Equals),
-        ">" => Some(Token::Greater),
-        "<" => Some(Token::Lesser),
-        "&&" => Some(Token::And),
-        "||" => Some(Token::Or),
-        _ => thorough_tokenize(word),
+        ">" => Some(Token::Operator(String::from(">"))),
+        "<" => Some(Token::Operator(String::from("<"))),
+        _ => {
+            if word != " " {
+                Some(Token::Identifier(word.to_string()))
+            } else {
+                None
+            }
+        }
     }
-}
-
-fn thorough_tokenize(seq: &str) -> Option<Token> {
-    Some(Token::Undefined)
-}
-
-#[derive(Debug)]
-enum LexerState {
-    Number,
-    String,
-    Comment,
-    Ident,
-    Free,
 }

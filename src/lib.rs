@@ -1,6 +1,7 @@
 use crate::PrintColors::*;
-use colour::{cyan_ln, green_ln, magenta_ln, red_ln, white_ln};
+use colour::{cyan_ln, e_white_ln, green_ln, magenta_ln, red_ln, white_ln};
 use std::fs::File;
+use std::io;
 use std::io::{Read, Write};
 
 pub enum PrintColors {
@@ -17,9 +18,9 @@ pub fn init() {
         std::fs::create_dir("writhe/lib").unwrap();
         File::create("writhe/logs/runtime_log.txt").unwrap();
         File::create("writhe/logs/attempt_log.py").unwrap();
-        log("writhe directory created", Some(Green));
+        log("[NOTE] writhe directory created", Some(Green));
     }
-    log("writhe starting", Some(Green));
+    log("[NOTE] writhe starting", Some(Green));
 }
 pub fn log(msg: &str, pri: Option<PrintColors>) {
     let fm = format!(
@@ -47,12 +48,18 @@ pub fn log(msg: &str, pri: Option<PrintColors>) {
     }
 }
 
+pub fn panic_confirm(msg: &str) {
+    log(msg, Some(Red));
+    e_white_ln!("Error logged in writhe\\logs\\runtime_log.txt, press any key to exit");
+    let mut temp = String::new();
+    io::stdin().read_line(&mut temp).unwrap();
+    panic!()
+}
+
 #[derive(Debug, PartialEq, Clone)]
 pub enum Token {
-    Divide,
-    Multiply,
-    Subtract,
-    Add,
+    Operator(String),
+    DoubleColon,
     Comma,
     Trait,
     Impl,
@@ -61,7 +68,7 @@ pub enum Token {
     Identifier(String), // Remember to limit this to 79 chars
     StringLiteral(String),
     BooleanLiteral(bool),
-    NumericLiteral(usize),
+    NumericLiteral(f64),
     Fn,
     Let,
     Use,
@@ -80,9 +87,4 @@ pub enum Token {
     CurlyLeft,
     CurlyRight,
     Equals,
-    DoubleEquals,
-    Greater,
-    Lesser,
-    And,
-    Or,
 }
