@@ -1,6 +1,27 @@
-[2023-07-15 21:07:48.5213] >> [NOTE] writhe directory created
-[2023-07-15 21:07:48.5216] >> [NOTE] writhe starting
-[2023-07-15 21:07:48.5219] >> [NOTE] args: [
+[2023-07-15 21:30:33.0511] >> [NOTE] writhe directory created
+[2023-07-15 21:30:33.0514] >> [NOTE] writhe starting
+[2023-07-15 21:30:33.0517] >> [NOTE] args: [
+    "target\\debug\\writhe.exe",
+    "src/hello.rs",
+]
+[2023-07-15 21:31:54.2070] >> [NOTE] writhe starting
+[2023-07-15 21:31:54.2074] >> [NOTE] args: [
+    "target\\debug\\writhe.exe",
+    "src/hello.rs",
+]
+[2023-07-15 21:32:40.5668] >> [NOTE] writhe starting
+[2023-07-15 21:32:40.5672] >> [NOTE] args: [
+    "target\\debug\\writhe.exe",
+    "hello.rs",
+]
+[2023-07-15 21:59:52.7975] >> [MAIN ERROR] Unknown command!
+[2023-07-15 22:06:28.7105] >> [MAIN ERROR] Unknown command!
+[2023-07-15 22:06:47.3242] >> [MAIN ERROR] Unknown command!
+[2023-07-15 22:06:57.8010] >> [MAIN ERROR] Unknown command!
+[2023-07-15 22:07:10.9757] >> [MAIN ERROR] Unknown command!
+[2023-07-15 22:07:15.8857] >> [MAIN ERROR] Unknown command!
+[2023-07-15 22:10:13.4471] >> [NOTE] writhe starting
+[2023-07-15 22:10:13.4474] >> [NOTE] args: [
     "target\\debug\\writhe.exe",
     "hello.rs",
 ]

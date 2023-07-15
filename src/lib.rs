@@ -3,6 +3,7 @@ use colour::{cyan_ln, e_white_ln, green_ln, magenta_ln, red_ln, white_ln};
 use std::fs::File;
 use std::io;
 use std::io::{Read, Write};
+use serde_derive::{Deserialize, Serialize};
 
 pub enum PrintColors {
     Red,
@@ -11,13 +12,15 @@ pub enum PrintColors {
     Magenta,
     White,
 }
+#[derive(Debug, Default, Serialize, Deserialize)]
+pub struct Config {
+    files: Vec<String>,
+}
 pub fn init() {
     if let Ok(_) = std::fs::create_dir("writhe") {
-        let default_config = "{
-  \"files\": [
-    \"files_go_here.rs\",
-  ]
-}";
+        let default_config = Config {
+            files: vec![],
+        };
         std::fs::create_dir("writhe/src").unwrap();
         std::fs::create_dir("writhe/logs").unwrap();
         std::fs::create_dir("writhe/lib").unwrap();
@@ -25,11 +28,10 @@ pub fn init() {
         File::create("writhe/logs/attempt_log.py").unwrap();
         File::create("writhe/writhe_config.json")
             .unwrap()
-            .write_all(format!("{:#}", default_config).as_bytes())
+            .write_all(format!("{:#?}", default_config).as_bytes())
             .unwrap();
         log("[NOTE] writhe directory created", Some(Green));
     }
-    log("[NOTE] writhe starting", Some(Green));
 }
 pub fn log(msg: &str, pri: Option<PrintColors>) {
     let fm = format!(

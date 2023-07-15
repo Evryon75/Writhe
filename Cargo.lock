@@ -72,6 +72,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "confy"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e37668cb35145dcfaa1931a5f37fde375eeae8068b4c0d2f289da28a270b2d2c"
+dependencies = [
+ "directories",
+ "serde",
+ "thiserror",
+ "toml",
+]
+
+[[package]]
 name = "core-foundation-sys"
 version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -100,6 +112,37 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "acdd7c62a3665c7f6830a51635d9ac9b23ed385797f70a83bb8bafe9c572ab2b"
 dependencies = [
  "winapi",
+]
+
+[[package]]
+name = "directories"
+version = "4.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f51c5d4ddabd36886dd3e1438cb358cdcb0d7c499cb99cb4ac2e38e18b5cb210"
+dependencies = [
+ "dirs-sys",
+]
+
+[[package]]
+name = "dirs-sys"
+version = "0.3.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1b1d1d91c932ef41c0f2663aa8b0ca0342d444d842c06914aa0a7e352d0bada6"
+dependencies = [
+ "libc",
+ "redox_users",
+ "winapi",
+]
+
+[[package]]
+name = "getrandom"
+version = "0.2.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "be4136b2a15dd319360be1c07d9933517ccf0be8f16bf62a3bee4f0d618df427"
+dependencies = [
+ "cfg-if",
+ "libc",
+ "wasi 0.11.0+wasi-snapshot-preview1",
 ]
 
 [[package]]
@@ -201,7 +244,7 @@ checksum = "93f00c865fe7cabf650081affecd3871070f26767e7b2070a3ffae14c654b447"
 dependencies = [
  "cfg-if",
  "libc",
- "redox_syscall",
+ "redox_syscall 0.3.5",
  "smallvec",
  "windows-targets",
 ]
@@ -226,11 +269,31 @@ dependencies = [
 
 [[package]]
 name = "redox_syscall"
+version = "0.2.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fb5a58c1855b4b6819d59012155603f0b22ad30cad752600aadfcb695265519a"
+dependencies = [
+ "bitflags",
+]
+
+[[package]]
+name = "redox_syscall"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "567664f262709473930a4bf9e51bf2ebf3348f2e748ccc50dea20646858f8f29"
 dependencies = [
  "bitflags",
+]
+
+[[package]]
+name = "redox_users"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b033d837a7cf162d7993aded9304e30a83213c648b6e389db233191f891e5c2b"
+dependencies = [
+ "getrandom",
+ "redox_syscall 0.2.16",
+ "thiserror",
 ]
 
 [[package]]
@@ -244,6 +307,17 @@ name = "serde"
 version = "1.0.171"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "30e27d1e4fd7659406c492fd6cfaf2066ba8773de45ca75e855590f856dc34a9"
+
+[[package]]
+name = "serde_derive"
+version = "1.0.171"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "389894603bd18c46fa56231694f8d827779c0951a667087194cf9de94ed24682"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
 
 [[package]]
 name = "signal-hook"
@@ -293,6 +367,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "thiserror"
+version = "1.0.43"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a35fc5b8971143ca348fa6df4f024d4d55264f3468c71ad1c2f365b0a4d58c42"
+dependencies = [
+ "thiserror-impl",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "1.0.43"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "463fe12d7993d3b327787537ce8dd4dfa058de32fc2b195ef3cde03dc4771e8f"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "time"
 version = "0.1.45"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -301,6 +395,15 @@ dependencies = [
  "libc",
  "wasi 0.10.0+wasi-snapshot-preview1",
  "winapi",
+]
+
+[[package]]
+name = "toml"
+version = "0.5.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f4f7f0dd8d50a853a531c426359045b1998f04219d88799810762cd4ad314234"
+dependencies = [
+ "serde",
 ]
 
 [[package]]
@@ -478,5 +581,7 @@ version = "0.1.0"
 dependencies = [
  "chrono",
  "colour",
+ "confy",
  "serde",
+ "serde_derive",
 ]
