@@ -1,0 +1,54 @@
+[2023-07-16 11:55:51.0315] >> [NOTE] writhe directory created
+[2023-07-16 11:55:51.0319] >> [NOTE] writhe starting
+[2023-07-16 11:55:51.0322] >> [NOTE] args: [
+    "writhe",
+    "init",
+]
+[2023-07-16 11:55:53.3826] >> [NOTE] writhe starting
+[2023-07-16 11:55:53.3829] >> [NOTE] args: [
+    "writhe",
+    "main.rs",
+]
+[2023-07-16 11:55:53.3842] >> [LEXER ERROR] Numeric literals must not contain more than one dot [.]
+At line 22: 1.. !
+[2023-07-16 11:56:02.7737] >> [NOTE] writhe starting
+[2023-07-16 11:56:02.7741] >> [NOTE] args: [
+    "writhe",
+    "../hello.rs",
+]
+[2023-07-16 11:56:42.3403] >> [NOTE] writhe starting
+[2023-07-16 11:56:42.3407] >> [NOTE] args: [
+    "writhe",
+    "../hello.r",
+]
+[2023-07-16 11:56:48.7659] >> [ERROR] File not found, run `dir *.rs` to see all rust files in the directory
+[2023-07-16 11:56:52.2772] >> [NOTE] writhe starting
+[2023-07-16 11:56:52.2775] >> [NOTE] args: [
+    "writhe",
+    "asd",
+]
+[2023-07-16 11:57:20.0768] >> [NOTE] writhe starting
+[2023-07-16 11:57:20.0772] >> [NOTE] args: [
+    "writhe",
+    "asd",
+]
+[2023-07-16 11:57:24.7688] >> [ERROR] File not found, run `dir *.rs` to see all rust files in the directory
+[2023-07-16 11:57:28.0828] >> [NOTE] writhe starting
+[2023-07-16 11:57:28.0831] >> [NOTE] args: [
+    "writhe",
+    "main.rs",
+]
+[2023-07-16 11:57:28.0844] >> [LEXER ERROR] Numeric literals must not contain more than one dot [.]
+At line 22: 1.. !
+[2023-07-16 11:57:41.4814] >> [NOTE] writhe starting
+[2023-07-16 11:57:41.4817] >> [NOTE] args: [
+    "writhe",
+    "main.rs",
+]
+[2023-07-16 11:57:41.4831] >> [LEXER ERROR] Numeric literals must not contain more than one dot [.]
+At line 22: 1.. !
+[2023-07-16 11:57:45.3813] >> [NOTE] writhe starting
+[2023-07-16 11:57:45.3817] >> [NOTE] args: [
+    "writhe",
+    "init",
+]

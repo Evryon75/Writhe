@@ -12,7 +12,7 @@ enum LexerState {
     Ident,
     Free,
 }
-
+//todo: add iterator stuff
 pub fn lex(input_raw: String) -> Vec<Token> {
     let mut tokens: Vec<Token> = vec![];
     let mut state = LexerState::Free;

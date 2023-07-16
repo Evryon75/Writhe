@@ -1,8 +1,7 @@
 use crate::PrintColors::*;
-use colour::{cyan_ln, e_white_ln, green_ln, magenta_ln, red_ln, white_ln};
 use std::fs::File;
-use std::io;
 use std::io::{Read, Write};
+use colour::{cyan, green, magenta, red, white};
 use serde_derive::{Deserialize, Serialize};
 
 pub enum PrintColors {
@@ -50,25 +49,24 @@ pub fn log(msg: &str, pri: Option<PrintColors>) {
 
     if let Some(color) = pri {
         match color {
-            Red => red_ln!("{}", msg),
-            Green => green_ln!("{}", msg),
-            Cyan => cyan_ln!("{}", msg),
-            Magenta => magenta_ln!("{}", msg),
-            White => white_ln!("{}", msg),
+            Red => red!("{}\n", msg),
+            Green => green!("{}\n", msg),
+            Cyan => cyan!("{}\n", msg),
+            Magenta => magenta!("{}\n", msg),
+            White => white!("{}\n", msg),
         }
     }
 }
 
 pub fn panic_confirm(msg: &str) {
     log(msg, Some(Red));
-    e_white_ln!("Error logged in writhe\\logs\\runtime_log.txt, press any key to exit");
-    let mut temp = String::new();
-    io::stdin().read_line(&mut temp).unwrap();
+    white!();
     panic!()
 }
 
 #[derive(Debug, PartialEq, Clone)]
 pub enum Token {
+    Iter(String),
     Operator(String),
     DoubleColon,
     Comma,
